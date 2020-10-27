@@ -32,31 +32,31 @@ class Disney:
         self.driver.find_element(By.XPATH, '//button[text()="Next"]').click()
 
         while(True):
-			for day in self.candidate_days:
-				time.sleep(self.sleep_sec + 5)
-				logging.info(f"Looking for day: {day}")
-				self.driver.find_element(
-				By.XPATH,
-				f"//tbody[contains(@data-month,'11')]/tr/td/a[contains(@data-day,'{day}')]",
-				).click()
-				time.sleep(self.sleep_sec)
-				self.driver.find_element(
-				By.XPATH, '//button[text()="Print out at home"]'
-				).click()
-				time.sleep(self.sleep_sec)
+            for day in self.candidate_days:
+                time.sleep(self.sleep_sec + 5)
+                logging.info(f"Looking for day: {day}")
+                self.driver.find_element(
+                    By.XPATH,
+                    f"//tbody[contains(@data-month,'11')]/tr/td/a[contains(@data-day,'{day}')]",
+                ).click()
+                time.sleep(self.sleep_sec)
+                self.driver.find_element(
+                    By.XPATH, '//button[text()="Print out at home"]'
+                ).click()
+                time.sleep(self.sleep_sec)
 
-				unvailable_cnt = len(
-				self.driver.find_elements(
-					By.XPATH,
-					'//p[text()="Currently not available for purchase"]',
-				)
-				)
-				# 3 types of tickets in total
-				if unvailable_cnt < 3:
-				logging.info("Tickets Available!!!")
-				self.send_notification(day)
-				break
-			time.sleep(300)
+                unvailable_cnt = len(
+                    self.driver.find_elements(
+                        By.XPATH,
+                        '//p[text()="Currently not available for purchase"]',
+                    )
+                )
+                # 3 types of tickets in total
+                if unvailable_cnt < 3:
+                    logging.info("Tickets Available!!!")
+                    self.send_notification(day)
+                    break
+            time.sleep(300)
 
 
 if __name__ == "__main__":
