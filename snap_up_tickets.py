@@ -55,7 +55,6 @@ class Disney:
                 if unvailable_cnt < 3:
                     logging.info("Tickets Available!!!")
                     self.send_notification(day)
-                    break
             time.sleep(300)
 
 
