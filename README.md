@@ -1,5 +1,5 @@
 # DisneylandTicketNotification
-Due to COVID-19, Tokyo Disneyland conducts limits on attendance, making it hard to get tickets. But I want to visit Disneyland anyway. So I wrote a script to snap up tickets and send notifications through Telegram when tickets are available.
+Due to COVID-19, Tokyo Disneyland conducts limits on attendance, making it hard to get tickets. But I want to visit Disneyland anyway. So I wrote a script to snap up tickets and send notifications through Telegram bot when tickets are available.
 
 ## Preliminaries
 * Selenium
